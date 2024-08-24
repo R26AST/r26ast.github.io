@@ -207,3 +207,34 @@
   document.addEventListener('scroll', navmenuScrollspy);
 
 })();
+
+const pageLinks = document.querySelectorAll('.page-link'); 
+let currentPage = 1; 
+pageLinks.forEach((link) => { 
+  link.addEventListener('click', (e) => { 
+    e.preventDefault(); 
+    const page = parseInt(link.getAttribute('data-page')); 
+    if (page !== currentPage) { 
+      currentPage = page; 
+      displayPage(currentPage); 
+      updatePagination(); 
+    } 
+  }); 
+}); 
+
+function displayPage(page) {  
+  for(let i = 1; i < 9; i++) {
+    $('.semester-'+i).css('display','none');
+  }
+  $('.semester-'+page).css('display','');
+} 
+
+function updatePagination() {  
+  pageLinks.forEach((link) => { 
+      const page = parseInt(link.getAttribute('data-page')); 
+      link.classList.toggle('aktif', page === currentPage); 
+  }); 
+} 
+
+displayPage(currentPage); 
+updatePagination();
