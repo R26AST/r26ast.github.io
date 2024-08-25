@@ -136,7 +136,7 @@
             <div class="table-responsive">
               <table class="table table-bordered">
                 <thead>
-                  <tr>
+                  <tr class="strip">
                     <th scope="col">Nama Ahli</th>
                     <th scope="col">Pengertian Integrasi Nasional</th>
                   </tr>
@@ -359,10 +359,15 @@
   <div id="preloader"></div>
 
   <style>
-    tbody tr:nth-child(even) {
+    tr:nth-child(even) {
       background-color: var(--accent-color);
       color: #fff;
     }
+    .strip {
+      background-color: var(--accent-color);
+      color: #fff;
+    }
+    
     .article {
       background-color: var(--surface-color);
       box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
