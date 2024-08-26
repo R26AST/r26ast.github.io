@@ -1725,3 +1725,8 @@ section,
 .starter-section {
   /* Add your styles here */
 }
+
+mark {
+  background: var(--accent-color);
+  color: #fff;
+}
