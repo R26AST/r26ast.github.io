@@ -139,27 +139,6 @@
               <a href="#">Graphic Design</a>
               <a href="#">Marketing</a>
             </div>
-
-            <h4>Enim qui eos rerum in delectus</h4>
-            <p>Nam voluptatem quasi numquam quas fugiat ex temporibus quo est. Quia aut quam quod facere ut non occaecati ut aut. Nesciunt mollitia illum tempore corrupti sed eum reiciendis. Maxime modi rerum.</p>
-            <div class="tags-widget widget-item">
-
-              <h3 class="widget-title">Tags</h3>
-              <ul>
-                <li><a href="#">App</a></li>
-                <li><a href="#">IT</a></li>
-                <li><a href="#">Business</a></li>
-                <li><a href="#">Mac</a></li>
-                <li><a href="#">Design</a></li>
-                <li><a href="#">Office</a></li>
-                <li><a href="#">Creative</a></li>
-                <li><a href="#">Studio</a></li>
-                <li><a href="#">Smart</a></li>
-                <li><a href="#">Tips</a></li>
-                <li><a href="#">Marketing</a></li>
-              </ul>
-
-            </div>
           </div> -->
 
           <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
@@ -169,10 +148,23 @@
               <div class="search-widget widget-item">
 
                 <h3 class="widget-title">Search</h3>
-                <form action="">
-                  <input type="text">
-                  <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+                <!-- <form action="">
+                  <input type="text" placeholder="Cari sesuatu..." id="search">
+                  <button class="clear-input-button" aria-label="Clear input" title="Clear input">&times;</button>
+                  <button type="button" title="Search" id="search-btn"><i class="bi bi-search"></i></button>
+                </form> -->
+
+                <div class="search-section">
+                <form action="#" class="search-form">
+                  <input type="search" placeholder="Cari..." class="search-input" required="">
+                  <button class="nav-button search-button">
+                    <i class="fa fa-search"></i>
+                  </button>
                 </form>
+                <!--<button class="nav-button mic-button">
+                  <i class="fa fa-microphone"></i>
+                </button>-->
+              </div>
 
               </div><!--/Search Widget -->
 
@@ -488,6 +480,76 @@
       padding-left: 5px;
       color: color-mix(in srgb, var(--default-color), transparent 60%);
       font-size: 14px;
+    }
+
+    .search-section .nav-button {
+      border: none;
+      height: 40px;
+      width: 40px;
+      cursor: pointer;
+      background: none;
+      border-radius: 50%;
+    }
+    
+    .search-section .nav-button:hover {
+      background: var(--light-gray-color) !important;
+    }
+    
+    .search-section .nav-button i {
+      font-size: 1.5rem;
+      display: flex;
+      color: var(--black-color);
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .search-section {
+      gap: 1rem;
+    }
+    
+    :where(.search-section, .search-form) {
+      display: flex;
+      align-items: center;
+    }
+    
+        .search-section {
+      display: flex;
+      justify-content: center;
+    }
+    
+    .search-section .search-form {
+      flex: 1;
+      height: 40px;
+      width: 550px;
+    }
+    
+    .search-section .search-form .search-input {
+      width: 100%;
+      height: 100%;
+      font-size: 1rem;
+      padding: 0 1rem;
+      outline: none;
+      color: var(--black-color);
+      background: var(--white-color);
+      border-radius: 3.1rem 0 0 3.1rem;
+      border: 1px solid var(--border-color);
+    }
+    
+    .search-section .search-form .search-input:focus {
+      border-color: var(--primary-color);
+    }
+    
+    .search-section .search-form .search-button {
+      height: 40px;
+      width: auto;
+      padding: 0 1.25rem;
+      border-radius: 0 3.1rem 3.1rem 0;
+      border: 1px solid var(--border-color);
+      border-left: 0;
+    }
+    
+    .search-section .mic-button {
+      background: var(--light-white-color);
     }
   </style>
 
