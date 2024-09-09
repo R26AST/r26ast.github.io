@@ -241,11 +241,13 @@ updatePagination();
 
 document.onkeydown = function(e) {
   if (e.ctrlKey && (e.key === "u" || e.key === "U")) {//Alt+c, Alt+v will also be disabled sadly.
-    alert('not allowed');
+    alert('Dilarang!');
+    e.preventDefault();
   }
   return false;
 };
 
 $('body').on("cut copy paste", function (e) { 
-  return false; 
+   e.preventDefault();
+  //return false; 
 });
