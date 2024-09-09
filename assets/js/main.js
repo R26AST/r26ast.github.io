@@ -246,6 +246,6 @@ document.onkeydown = function(e) {
   return false;
 };
 
-$('body').bind("copy paste", function (e) { 
+$('body').on("cut copy paste", function (e) { 
   return false; 
 });
