@@ -1,2 +1,2 @@
-# r26.id
+# r26ast.github.io
 Website R26
