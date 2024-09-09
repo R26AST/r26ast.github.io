@@ -247,7 +247,7 @@ document.onkeydown = function(e) {
   return false;
 };
 
-$('body').on("cut copy paste", function (e) { 
+$('body').on("cut copy paste contextmenu", function (e) { 
    e.preventDefault();
   //return false; 
 });
