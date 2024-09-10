@@ -244,7 +244,6 @@ document.onkeydown = function(e) {
     alert('Dilarang!');
     e.preventDefault();
   }
-  return false;
 };
 
 $('body').on("cut copy paste contextmenu", function (e) { 
