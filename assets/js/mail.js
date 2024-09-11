@@ -61,7 +61,7 @@ $('#kirim').click(function () {
 
 const handleForm = async (e) => {
         try {
-          await emailjs.sendForm('service_k1vmc1w', 'template_r26astr', '.php-email-form');
+          await emailjs.sendForm('default_service', 'template_r26astr', '.php-email-form');
           alert('email sent!');
         } catch (error) {
           console.error(error);
