@@ -21,13 +21,16 @@ $('.php-email-form').on('submit', function(event) {
         if (response.status == 200) {
             $('.sent-message').addClass('d-block');
             $('.php-email-form').trigger('reset');
+            setTimeout(clear, 1500);
         } else {
             response.json().then((data) => {
                 $('.error-message').addClass('d-block');
                 if (Object.hasOwn(data, 'errors')) {
                     $('.error-message').html( data["errors"].map(error => error["message"]).join(", ") );
+                    setTimeout(clear, 1500);
                 } else {
-                     $('.error-message').html("Maaf! Terjadi masalah saat akan mengirim pesan.");
+                    $('.error-message').html("Maaf! Terjadi masalah saat akan mengirim pesan.");
+                    setTimeout(clear, 1500);
                 }
             })
         }
@@ -36,16 +39,14 @@ $('.php-email-form').on('submit', function(event) {
         $('.loading').removeClass('d-block');
         $('.error-message').html("Maaf! Terjadi masalah saat akan mengirim pesan.");
         $('#kirim').prop('disabled', false);
-    });
-  
-  setTimeout(function(){
-    $('.error-message').removeClass('d-block');
-    $('.sent-message').removeClass('d-block');
-  }, 1500);
-  
+        setTimeout(clear, 1500);
+    }); 
 });
 
-
+function clear(){
+    $('.error-message').removeClass('d-block');
+    $('.sent-message').removeClass('d-block');
+  }
 
 
 
