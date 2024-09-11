@@ -64,11 +64,12 @@ $('#kirim').click(function () {
 }
 
 function kirimEmail() {
-    let pesanEmail = {
+    var pesanEmail = {
         nama : $("input[name=nama]").val(),
+        email : $("input[name=email]").val(),
         subjek : $("input[name=subjek]").val(),
-        pesan : $("input[name=pesan]").val(),
-    }
+        pesan : $("input[name=pesan]").val()
+    };
     $('.loading').addClass('d-block');
     $('.error-message').removeClass('d-block');
     $('.sent-message').removeClass('d-block');
