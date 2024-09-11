@@ -62,11 +62,11 @@ $('#kirim').click(function () {
 emailjs.init({
   publicKey: '9ccjcU8IM7t7EiTmT',
   // Do not allow headless browsers
-  blockHeadless: true,
+  //blockHeadless: true,
   limitRate: {
     // Allow 1 request per 10s
     throttle: 10000,
-  },
+  }
 });
 
 $('#kirim').click(function () {
@@ -75,10 +75,10 @@ $('#kirim').click(function () {
 
 function kirimEmail() {
     var data = {
-        nama : $("input[name=nama]").val(),
-        email : $("input[name=email]").val(),
-        subjek : $("input[name=subjek]").val(),
-        pesan : $("input[name=pesan]").val()
+        nama: $("input[name='nama']").val(),
+        email: $("input[name='email']").val(),
+        subjek: $("input[name='subjek']").val(),
+        pesan: $("input[name='pesan']").val()
     };
     $('.loading').addClass('d-block');
     $('.error-message').removeClass('d-block');
