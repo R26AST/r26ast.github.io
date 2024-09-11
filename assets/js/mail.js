@@ -59,7 +59,8 @@ $('#kirim').click(function () {
 
 */
 
-$('.php-email-form').on('submit', function() {
+$('.php-email-form').on('submit', function(e) {
+    e.preventDefault();
     $('.loading').addClass('d-block');
     emailjs.sendForm('default_service', 'template_r26astr', '.php-email-form')
     .then(
