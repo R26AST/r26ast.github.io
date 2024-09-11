@@ -53,4 +53,4 @@ $('#kirim').click(function () {
         });
     }
     form.addEventListener("submit", handleSubmit);
-}
+});
