@@ -62,7 +62,7 @@ $('#kirim').click(function () {
 $('.php-email-form').on('submit', function(event) {
     event.preventDefault();
     $('.loading').addClass('d-block');
-    emailjs.sendForm('default_service', 'template_r26astr', '.php-email-form')
+    emailjs.sendForm('default_service', 'template_r26astr', document.querySelector('.php-email-form'))
     .then(
         $('.loading').removeClass('d-block');
         (response) => {
