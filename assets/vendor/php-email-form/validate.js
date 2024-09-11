@@ -68,15 +68,15 @@
         thisForm.querySelector('.sent-message').classList.add('d-block');
         thisForm.reset(); 
       } else {
-        thisForm.querySelector('.sent-message').classList.add('d-block');
-        thisForm.reset(); 
-        //throw new Error(data ? data : 'Form submission failed and no error message returned from: ' + action); 
+        //thisForm.querySelector('.sent-message').classList.add('d-block');
+        //thisForm.reset(); 
+        throw new Error(data ? data : 'Form submission failed and no error message returned from: ' + action); 
       }
     })
     .catch((error) => {
-      thisForm.querySelector('.sent-message').classList.add('d-block');
-      thisForm.reset(); 
-      //displayError(thisForm, error);
+      //thisForm.querySelector('.sent-message').classList.add('d-block');
+      //thisForm.reset(); 
+      displayError(thisForm, error);
     });
   }
 
