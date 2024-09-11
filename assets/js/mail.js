@@ -59,11 +59,16 @@ $('#kirim').click(function () {
 
 */
 
-$('#kirim').click(function () {
-    kirimEmail();
-}
-
-function kirimEmail() {
+const handleForm = async (e) => {
+        try {
+          await emailjs.sendForm('service_k1vmc1w', 'template_r26astr', $('.php-email-form'));
+          alert('email sent!');
+        } catch (error) {
+          console.error(error);
+          alert('Failed to send email');
+        }
+      };
+/*function kirimEmail() {
     var data = {
         nama: $("input[name='nama']").val(),
         email: $("input[name='email']").val(),
@@ -86,7 +91,7 @@ function kirimEmail() {
             //console.log('FAILED...', error);
         }
     ); 
-    /*
+    /
     var data = {
        service_id: 'service_k1vmc1w',
        template_id: 'template_r26astr',
@@ -107,6 +112,6 @@ function kirimEmail() {
         alert('Your mail is sent!');
     }).fail(function(error) {
         alert('Oops... ' + JSON.stringify(error));
-    });*/
-}
+    });*
+}*/
 
