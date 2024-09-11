@@ -27,7 +27,7 @@
 
       let formData = new FormData( thisForm );
 
-      if ( recaptcha ) {
+      /*if ( recaptcha ) {
         if(typeof grecaptcha !== "undefined" ) {
           grecaptcha.ready(function() {
             try {
@@ -45,7 +45,7 @@
         }
       } else {
         php_email_form_submit(thisForm, action, formData);
-      }
+      } */
     });
   });
 
