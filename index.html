@@ -31,8 +31,6 @@
   <!-- jQuery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-
   <!-- =======================================================
   * Template Name: Vesperr
   * Template URL: https://bootstrapmade.com/vesperr-free-bootstrap-template/
@@ -718,11 +716,11 @@
             </form> -->
 
           <!-- <form action="https://formspree.io/f/mzzpwnre" method="POST" class="php-email-form" data-aos="fade-up" data-aos-delay="500">
-          <form action="https://r26.rf.gd/form-submit.php" method="POST" class="php-email-form" data-aos="fade-up" data-aos-delay="500">
+          <form method="POST" class="php-email-form" data-aos="fade-up" data-aos-delay="500">
               <div class="row gy-4">
 
                 <div class="col-md-6">
-                  <input type="text" name="name" class="form-control" placeholder="Nama Anda" required="">
+                  <input type="text" name="nama" class="form-control" placeholder="Nama Anda" required="">
                 </div>
 
                 <div class="col-md-6 ">
@@ -730,11 +728,11 @@
                 </div>
 
                 <div class="col-md-12">
-                  <input type="text" class="form-control" name="_subject" placeholder="Subjek" required="">
+                  <input type="text" class="form-control" name="subjek" placeholder="Subjek" required="">
                 </div>
 
                 <div class="col-md-12">
-                  <textarea class="form-control" name="message" rows="6" placeholder="Pesan" required="" style="min-height: 156px; max-height: 157px;"></textarea>
+                  <textarea class="form-control" name="pesan" rows="6" placeholder="Pesan" required="" style="min-height: 156px; max-height: 157px;"></textarea>
                 </div>
 
                 <div class="col-md-12 text-center">
@@ -743,12 +741,12 @@
                   <div class="sent-message">Pesan Anda telah dikirim. ありがとうございます!</div>
                   <!- <div class="sent-message">Your message has been sent. Thank you!</div> -
 
-                  <button type="submit" id="kirim">Kirim Pesan</button>
+                  <input type="submit" id="kirim" value="Kirim Pesan"/>
                 </div>
 
               </div>
-            </form> -->
-            <div class="php-email-form" data-aos="fade-up" data-aos-delay="500">
+            </form> 
+            <!-- <div class="php-email-form" data-aos="fade-up" data-aos-delay="500">
               <div class="row gy-4">
 
                 <div class="col-md-6">
@@ -777,7 +775,7 @@
                 </div>
 
               </div>
-            </div>
+            </div>-->
           </div><!-- End Contact Form -->
 
         </div>
@@ -847,6 +845,7 @@
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
