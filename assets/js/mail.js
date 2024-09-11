@@ -59,7 +59,8 @@ $('#kirim').click(function () {
 
 */
 
-const handleForm = async (e) => {
+$('.php-email-form').on('submit', function() {
+async (e) => {
         try {
           await emailjs.sendForm('default_service', 'template_r26astr', '.php-email-form');
           alert('email sent!');
@@ -67,7 +68,8 @@ const handleForm = async (e) => {
           console.error(error);
           alert('Failed to send email');
         }
-      };
+      }
+});
 /*function kirimEmail() {
     var data = {
         nama: $("input[name='nama']").val(),
