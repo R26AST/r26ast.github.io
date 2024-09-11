@@ -10,6 +10,7 @@ $('.php-email-form').on('submit', function(event) {
         $('.loading').removeClass('d-block');
         (response) => {
             $('.sent-message').addClass('d-block');
+            this.reset();
         }, 
         (error) => {
             $('.error-message').addClass('d-block');
