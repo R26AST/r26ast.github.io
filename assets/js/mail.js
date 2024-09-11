@@ -7,13 +7,13 @@ $('.php-email-form').on('submit', function(event) {
     $('#kirim').prop('disabled', true);
 
     emailjs.sendForm('default_service', 'template_r26astr', this)
-    .then(response => {
+    .then((response) => {
         $('.loading').removeClass('d-block');
-        if (response.ok) {
+        if (response.status == 200) {
             $('.sent-message').addClass('d-block');
-            this.reset();
+            $('.php-email-form').reset();
         } else {
-            response.json().then(data => {
+            response.json().then((data) => {
                 $('.error-message').addClass('d-block');
                 if (Object.hasOwn(data, 'errors')) {
                     $('.error-message').html( data["errors"].map(error => error["message"]).join(", ") );
@@ -23,7 +23,7 @@ $('.php-email-form').on('submit', function(event) {
             })
         }
         $('#kirim').prop('disabled', false);
-    }).catch(error => {
+    }).catch((error) => {
         $('.error-message').html("Maaf! Terjadi masalah saat akan mengirim pesan.");
         $('#kirim').prop('disabled', false);
     });
