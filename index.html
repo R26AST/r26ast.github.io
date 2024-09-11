@@ -31,6 +31,15 @@
   <!-- jQuery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function(){
+      emailjs.init({
+        publicKey: "_xyb20YTiTkGhISpo",
+      });
+    })();
+  </script>
+
   <!-- =======================================================
   * Template Name: Vesperr
   * Template URL: https://bootstrapmade.com/vesperr-free-bootstrap-template/
@@ -715,8 +724,38 @@
               </div>
             </form> -->
 
-          <!-- <form action="https://formspree.io/f/mzzpwnre" method="POST" class="php-email-form" data-aos="fade-up" data-aos-delay="500"> -->
+          <!-- <form action="https://formspree.io/f/mzzpwnre" method="POST" class="php-email-form" data-aos="fade-up" data-aos-delay="500">
           <form action="https://r26.rf.gd/form-submit.php" method="POST" class="php-email-form" data-aos="fade-up" data-aos-delay="500">
+              <div class="row gy-4">
+
+                <div class="col-md-6">
+                  <input type="text" name="name" class="form-control" placeholder="Nama Anda" required="">
+                </div>
+
+                <div class="col-md-6 ">
+                  <input type="email" class="form-control" name="email" placeholder="Email Anda" required="">
+                </div>
+
+                <div class="col-md-12">
+                  <input type="text" class="form-control" name="_subject" placeholder="Subjek" required="">
+                </div>
+
+                <div class="col-md-12">
+                  <textarea class="form-control" name="message" rows="6" placeholder="Pesan" required="" style="min-height: 156px; max-height: 157px;"></textarea>
+                </div>
+
+                <div class="col-md-12 text-center">
+                  <div class="loading">Loading</div>
+                  <div class="error-message"></div>
+                  <div class="sent-message">Pesan Anda telah dikirim. ありがとうございます!</div>
+                  <!-- <div class="sent-message">Your message has been sent. Thank you!</div> -->
+
+                  <button type="submit" id="kirim">Kirim Pesan</button>
+                </div>
+
+              </div>
+            </form> -->
+            <form action="#" method="POST" class="php-email-form" data-aos="fade-up" data-aos-delay="500">
               <div class="row gy-4">
 
                 <div class="col-md-6">
