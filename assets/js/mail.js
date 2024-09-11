@@ -2,28 +2,9 @@ $('.php-email-form').on('submit', function(event) {
     event.preventDefault();
     
     $('.loading').addClass('d-block');
-    $('.error-message').removeClass('d-block');
-    $('.sent-message').removeClass('d-block');
+    //$('.error-message').removeClass('d-block');
+    //$('.sent-message').removeClass('d-block');
     $('#kirim').prop('disabled', true);
-    
-    /*emailjs.sendForm('default_service', 'template_r26astr', this)
-    .then(
-        $('.loading').removeClass('d-block');
-    )
-    .then(
-        (response) => {
-            $('.sent-message').addClass('d-block');
-            this.reset();
-        }, 
-        (error) => {
-            $('.error-message').addClass('d-block');
-            $('.error-message').html(JSON.stringify(error));
-            //alert(JSON.stringify(err));
-        }
-    )
-    .then(
-          $('#kirim').prop('disabled', false);  
-    );*/
 
     emailjs.sendForm('default_service', 'template_r26astr', this)
     .then(response => {
@@ -41,8 +22,10 @@ $('.php-email-form').on('submit', function(event) {
                 }
             })
         }
+        $('#kirim').prop('disabled', false);
     }).catch(error => {
         $('.error-message').html("Maaf! Terjadi masalah saat akan mengirim pesan.");
+        $('#kirim').prop('disabled', false);
     });
 });
 
