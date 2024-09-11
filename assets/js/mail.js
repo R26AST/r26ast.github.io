@@ -61,15 +61,23 @@ $('#kirim').click(function () {
 
 $('.php-email-form').on('submit', function(event) {
     event.preventDefault();
+    
     $('.loading').addClass('d-block');
+    $('.error-message').removeClass('d-block');
+    $('.sent-message').removeClass('d-block');
+    
     emailjs.sendForm('default_service', 'template_r26astr', this)
-    .then(() => {
-      //btn.value = 'Send Email';
-      alert('Sent!');
-    }, (err) => {
-      //btn.value = 'Send Email';
-      alert(JSON.stringify(err));
-    });
+    .then(
+        $('.loading').removeClass('d-block');
+        (response) => {
+            $('.sent-message').addClass('d-block');
+        }, 
+        (error) => {
+            $('.error-message').addClass('d-block');
+            $('.error-message').html(JSON.stringify(error));
+            //alert(JSON.stringify(err));
+        }
+    );
 });
 
 
