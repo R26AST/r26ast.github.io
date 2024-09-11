@@ -13,8 +13,6 @@ $('.php-email-form').on('submit', function(event) {
     event.preventDefault();
     
     $('.loading').addClass('d-block');
-    //$('.error-message').removeClass('d-block');
-    //$('.sent-message').removeClass('d-block');
     $('#kirim').prop('disabled', true);
 
     emailjs.sendForm('default_service', 'template_r26astr', this)
@@ -35,9 +33,16 @@ $('.php-email-form').on('submit', function(event) {
         }
         $('#kirim').prop('disabled', false);
     }).catch((error) => {
+        $('.loading').removeClass('d-block');
         $('.error-message').html("Maaf! Terjadi masalah saat akan mengirim pesan.");
         $('#kirim').prop('disabled', false);
     });
+  
+  setTimeout(function(){
+    $('.error-message').removeClass('d-block');
+    $('.sent-message').removeClass('d-block');
+  }, 1500);
+  
 });
 
 
