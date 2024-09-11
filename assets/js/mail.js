@@ -18,10 +18,13 @@ $('#kirim').click(function () {
 */
 $('#kirim').click(function () {
     var form = $('.php-email-form');
+
+    $('.loading').addClass('d-block');
+    $('.error-message').removeClass('d-block');
+    $('.sent-message').removeClass('d-block');
+    
     async function handleSubmit(event) {
         event.preventDefault();
-        var status = $('.sent-message');
-        var err_stat = $('.error-message");
         var data = new FormData(event.target);
         fetch(event.target.action, {
           method: form.method,
@@ -30,20 +33,23 @@ $('#kirim').click(function () {
               'Accept': 'application/json'
           }
         }).then(response => {
-          if (response.ok) {
-            status.innerHTML = "Thanks for your submission!";
-            form.reset();
-          } else {
-            response.json().then(data => {
-              if (Object.hasOwn(data, 'errors')) {
-                err_stat.innerHTML = data["errors"].map(error => error["message"]).join(", ")
+            $('.loading').removeClass('d-block');
+            if (response.ok) {
+                //status.innerHTML = "Thanks for your submission!";
+                $('.sent-message').addClass('d-block');
+                form.reset();
               } else {
-                err_stat.innerHTML = "Oops! There was a problem submitting your form";
+                response.json().then(data => {
+                    $('.error-message').addClass('d-block');
+                    if (Object.hasOwn(data, 'errors')) {
+                        $('.error-message').html( data["errors"].map(error => error["message"]).join(", ") );
+                    } else {
+                        $('.error-message').html("Oops! There was a problem submitting your form");
+                    }
+                })
               }
-            })
-          }
         }).catch(error => {
-          err_stat.innerHTML = "Oops! There was a problem submitting your form";
+          $('.error-message').html("Oops! There was a problem submitting your form");
         });
     }
     form.addEventListener("submit", handleSubmit);
