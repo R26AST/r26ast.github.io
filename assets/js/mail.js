@@ -60,15 +60,20 @@ $('#kirim').click(function () {
 */
 
 $('.php-email-form').on('submit', function() {
-async (e) => {
-        try {
-          await emailjs.sendForm('default_service', 'template_r26astr', '.php-email-form');
-          alert('email sent!');
-        } catch (error) {
-          console.error(error);
-          alert('Failed to send email');
+    $('.loading').addClass('d-block');
+    emailjs.sendForm('default_service', 'template_r26astr', '.php-email-form')
+    .then(
+        $('.loading').removeClass('d-block');
+        (response) => {
+            $('.sent-message').addClass('d-block');
+            //console.log('SUCCESS!', response.status, response.text);
+        },
+        (error) => {
+            $('.error-message').addClass('d-block');
+            $('.error-message').html(error);
+            //console.log('FAILED...', error);
         }
-      }
+    )
 });
 /*function kirimEmail() {
     var data = {
