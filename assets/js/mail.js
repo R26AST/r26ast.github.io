@@ -15,7 +15,7 @@ $('#kirim').click(function () {
       message => alert(message)
     );
 });
-*/
+
 $('#kirim').click(function () {
     var form = $('.php-email-form');
 
@@ -56,3 +56,29 @@ $('#kirim').click(function () {
     }
     form.addEventListener("submit", handleSubmit);
 });
+
+*/
+
+$('#kirim').click(function () {
+    kirimEmail();
+}
+
+function kirimEmail() {
+    $('.loading').addClass('d-block');
+    $('.error-message').removeClass('d-block');
+    $('.sent-message').removeClass('d-block');
+    
+    emailjs.sendForm('service_k1vmc1w', 'template_r26astr', '.php-email-form').then(
+        $('.loading').removeClass('d-block');
+        (response) => {
+            $('.sent-message').addClass('d-block');
+            //console.log('SUCCESS!', response.status, response.text);
+        },
+        (error) => {
+            $('.error-message').addClass('d-block');
+            $('.error-message').html(error);
+            //console.log('FAILED...', error);
+        },
+    );
+}
+
