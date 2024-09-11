@@ -1578,7 +1578,7 @@ section,
   color: color-mix(in srgb, var(--default-color), transparent 70%);
 }
 
-.contact .php-email-form #kirim /*button[type=submit]*/ {
+.contact .php-email-form input[type=submit] {
   color: var(--contrast-color);
   background: var(--accent-color);
   border: 0;
@@ -1587,7 +1587,7 @@ section,
   border-radius: 50px;
 }
 
-.contact .php-email-form #kirim:hover /*button[type=submit]:hover*/ {
+.contact .php-email-form input[type=submit]:hover {
   background: color-mix(in srgb, var(--accent-color), transparent 20%);
 }
 
