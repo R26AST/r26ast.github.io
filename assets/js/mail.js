@@ -1,3 +1,31 @@
+$('.php-email-form').on('submit', function(event) {
+    event.preventDefault();
+    
+    $('.loading').addClass('d-block');
+    $('.error-message').removeClass('d-block');
+    $('.sent-message').removeClass('d-block');
+    
+    emailjs.sendForm('default_service', 'template_r26astr', this)
+    .then(
+        $('.loading').removeClass('d-block');
+        (response) => {
+            $('.sent-message').addClass('d-block');
+        }, 
+        (error) => {
+            $('.error-message').addClass('d-block');
+            $('.error-message').html(JSON.stringify(error));
+            //alert(JSON.stringify(err));
+        }
+    );
+});
+
+
+
+
+
+
+
+
 /*
 let nama = $('#name').val(),
 email = $('#email').val(),
@@ -58,73 +86,3 @@ $('#kirim').click(function () {
 });
 
 */
-
-$('.php-email-form').on('submit', function(event) {
-    event.preventDefault();
-    
-    $('.loading').addClass('d-block');
-    $('.error-message').removeClass('d-block');
-    $('.sent-message').removeClass('d-block');
-    
-    emailjs.sendForm('default_service', 'template_r26astr', this)
-    .then(
-        $('.loading').removeClass('d-block');
-        (response) => {
-            $('.sent-message').addClass('d-block');
-        }, 
-        (error) => {
-            $('.error-message').addClass('d-block');
-            $('.error-message').html(JSON.stringify(error));
-            //alert(JSON.stringify(err));
-        }
-    );
-});
-
-
-/*function kirimEmail() {
-    var data = {
-        nama: $("input[name='nama']").val(),
-        email: $("input[name='email']").val(),
-        subjek: $("input[name='subjek']").val(),
-        pesan: $("textatea[name='pesan']").val()
-    };
-    $('.loading').addClass('d-block');
-    $('.error-message').removeClass('d-block');
-    $('.sent-message').removeClass('d-block');
-    
-    emailjs.send('service_k1vmc1w', 'template_r26astr', data).then(
-        $('.loading').removeClass('d-block');
-        (response) => {
-            $('.sent-message').addClass('d-block');
-            //console.log('SUCCESS!', response.status, response.text);
-        },
-        (error) => {
-            $('.error-message').addClass('d-block');
-            $('.error-message').html(error);
-            //console.log('FAILED...', error);
-        }
-    ); 
-    /
-    var data = {
-       service_id: 'service_k1vmc1w',
-       template_id: 'template_r26astr',
-       user_id: '9ccjcU8IM7t7EiTmT',
-       template_params: {
-        'nama': $("input[name=nama]").val(),
-        'email': $("input[name=email]").val(),
-        'subjek': $("input[name=subjek]").val(),
-        'pesan': $("input[name=pesan]").val()      
-       }
-    };
- 
-    $.ajax('https://api.emailjs.com/api/v1.0/email/send', {
-        type: 'POST',
-        data: JSON.stringify(data),
-        contentType: 'application/json'
-    }).done(function() {
-        alert('Your mail is sent!');
-    }).fail(function(error) {
-        alert('Oops... ' + JSON.stringify(error));
-    });*
-}*/
-
