@@ -59,16 +59,6 @@ $('#kirim').click(function () {
 
 */
 
-emailjs.init({
-  publicKey: '9ccjcU8IM7t7EiTmT',
-  // Do not allow headless browsers
-  //blockHeadless: true,
-  limitRate: {
-    // Allow 1 request per 10s
-    throttle: 10000,
-  }
-});
-
 $('#kirim').click(function () {
     kirimEmail();
 }
