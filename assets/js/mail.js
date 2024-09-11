@@ -1,3 +1,14 @@
+//emailjs.init('9ccjcU8IM7t7EiTmT');
+emailjs.init({
+  publicKey: '9ccjcU8IM7t7EiTmT',
+  limitRate: {
+    // Set the limit rate for the application
+    id: 'app',
+    // Allow 1 request per 10s
+    throttle: 10000,
+  },
+});
+
 $('.php-email-form').on('submit', function(event) {
     event.preventDefault();
     
