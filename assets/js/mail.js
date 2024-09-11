@@ -6,9 +6,11 @@ $('.php-email-form').on('submit', function(event) {
     $('.sent-message').removeClass('d-block');
     $('#kirim').prop('disabled', true);
     
-    emailjs.sendForm('default_service', 'template_r26astr', this)
+    /*emailjs.sendForm('default_service', 'template_r26astr', this)
     .then(
         $('.loading').removeClass('d-block');
+    )
+    .then(
         (response) => {
             $('.sent-message').addClass('d-block');
             this.reset();
@@ -18,8 +20,30 @@ $('.php-email-form').on('submit', function(event) {
             $('.error-message').html(JSON.stringify(error));
             //alert(JSON.stringify(err));
         }
-        $('#kirim').prop('disabled', false);
-    );
+    )
+    .then(
+          $('#kirim').prop('disabled', false);  
+    );*/
+
+    emailjs.sendForm('default_service', 'template_r26astr', this)
+    .then(response => {
+        $('.loading').removeClass('d-block');
+        if (response.ok) {
+            $('.sent-message').addClass('d-block');
+            this.reset();
+        } else {
+            response.json().then(data => {
+                $('.error-message').addClass('d-block');
+                if (Object.hasOwn(data, 'errors')) {
+                    $('.error-message').html( data["errors"].map(error => error["message"]).join(", ") );
+                } else {
+                     $('.error-message').html("Maaf! Terjadi masalah saat akan mengirim pesan.");
+                }
+            })
+        }
+    }).catch(error => {
+        $('.error-message').html("Maaf! Terjadi masalah saat akan mengirim pesan.");
+    });
 });
 
 
