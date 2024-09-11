@@ -73,7 +73,7 @@ function kirimEmail() {
     $('.error-message').removeClass('d-block');
     $('.sent-message').removeClass('d-block');
     
-    emailjs.sendForm('service_k1vmc1w', 'template_r26astr', pesanEmail).then(
+    emailjs.send('service_k1vmc1w', 'template_r26astr', pesanEmail).then(
         $('.loading').removeClass('d-block');
         (response) => {
             $('.sent-message').addClass('d-block');
