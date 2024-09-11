@@ -64,11 +64,16 @@ $('#kirim').click(function () {
 }
 
 function kirimEmail() {
+    let pesanEmail = {
+        nama : $("input[name=nama]").val(),
+        subjek : $("input[name=subjek]").val(),
+        pesan : $("input[name=pesan]").val(),
+    }
     $('.loading').addClass('d-block');
     $('.error-message').removeClass('d-block');
     $('.sent-message').removeClass('d-block');
     
-    emailjs.sendForm('service_k1vmc1w', 'template_r26astr', '.php-email-form').then(
+    emailjs.sendForm('service_k1vmc1w', 'template_r26astr', pesanEmail).then(
         $('.loading').removeClass('d-block');
         (response) => {
             $('.sent-message').addClass('d-block');
