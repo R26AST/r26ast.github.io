@@ -4,6 +4,7 @@ $('.php-email-form').on('submit', function(event) {
     $('.loading').addClass('d-block');
     $('.error-message').removeClass('d-block');
     $('.sent-message').removeClass('d-block');
+    $('#kirim').prop('disabled', true);
     
     emailjs.sendForm('default_service', 'template_r26astr', this)
     .then(
@@ -17,6 +18,7 @@ $('.php-email-form').on('submit', function(event) {
             $('.error-message').html(JSON.stringify(error));
             //alert(JSON.stringify(err));
         }
+        $('#kirim').prop('disabled', false);
     );
 });
 
