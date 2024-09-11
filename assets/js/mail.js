@@ -59,12 +59,22 @@ $('#kirim').click(function () {
 
 */
 
+emailjs.init({
+  publicKey: '9ccjcU8IM7t7EiTmT',
+  // Do not allow headless browsers
+  blockHeadless: true,
+  limitRate: {
+    // Allow 1 request per 10s
+    throttle: 10000,
+  },
+});
+
 $('#kirim').click(function () {
     kirimEmail();
 }
 
 function kirimEmail() {
-   /* var data = {
+    var data = {
         nama : $("input[name=nama]").val(),
         email : $("input[name=email]").val(),
         subjek : $("input[name=subjek]").val(),
@@ -85,11 +95,12 @@ function kirimEmail() {
             $('.error-message').html(error);
             //console.log('FAILED...', error);
         }
-    ); */
+    ); 
+    /*
     var data = {
        service_id: 'service_k1vmc1w',
        template_id: 'template_r26astr',
-       user_id: '_xyb20YTiTkGhISpo',
+       user_id: '9ccjcU8IM7t7EiTmT',
        template_params: {
         'nama': $("input[name=nama]").val(),
         'email': $("input[name=email]").val(),
@@ -106,6 +117,6 @@ function kirimEmail() {
         alert('Your mail is sent!');
     }).fail(function(error) {
         alert('Oops... ' + JSON.stringify(error));
-    });
+    });*/
 }
 
