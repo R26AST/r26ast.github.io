@@ -37,10 +37,12 @@ $('#kirim').click(function () {
             if (response.ok) {
                 //status.innerHTML = "Thanks for your submission!";
                 $('.sent-message').addClass('d-block');
+                $('.error-message').removeClass('d-block');
                 form.reset();
               } else {
                 response.json().then(data => {
                     $('.error-message').addClass('d-block');
+                    $('.sent-message').removeClass('d-block');
                     if (Object.hasOwn(data, 'errors')) {
                         $('.error-message').html( data["errors"].map(error => error["message"]).join(", ") );
                     } else {
