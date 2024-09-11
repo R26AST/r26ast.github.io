@@ -11,7 +11,7 @@ $('.php-email-form').on('submit', function(event) {
         $('.loading').removeClass('d-block');
         if (response.status == 200) {
             $('.sent-message').addClass('d-block');
-            $('.php-email-form').reset();
+            $('.php-email-form')[0].reset();
         } else {
             response.json().then((data) => {
                 $('.error-message').addClass('d-block');
