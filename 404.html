@@ -2,17 +2,74 @@
 permalink: /404.html
 ---
 
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset=utf-8>
-    <title>Redirecting...</title>
-    <link rel=canonical href="http://www.lunesu.com/index.html">
-    <meta http-equiv=refresh content="1; url=http://www.lunesu.com/index.html">
-  </head>
-  <body>
-    <h1>Redirecting...</h1>
-    <a href="http://www.lunesu.com/">Click here if you are not redirected.</a>
-    <script>var n=location.href.replace("index.php?/", "");if (n!=location.href)location=n;</script>
-  </body>
+<!doctype html>
+<html class="no-js" lang="id">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>404 Page</title>
+        <meta name="description" content="Saleh Riaz - UI/UX Engineer. Designer. Computer Scientist">
+        <meta name="keywords" content="ui engineer, ux, saleh, riaz, qureshi, website, softwares, salehriaz, salehriazq, computer scientist, design, visual design, saleh riaz qureshi"/>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="error/404.css">
+
+    </head>
+    <body class="bg-purple">
+        
+        <div class="stars">
+            <div class="custom-navbar">
+                <div class="brand-logo">
+                    <a href="https://instagram.com/_ruliff26"><img src="error/img/R26.png" width="10px"></a>
+                </div>
+                <!--<div class="stars">-->
+                <div class="navbar-links">
+                    <ul>
+                      <li><a href="#">Home</a></li>
+                      <li><a href="#">About</a></li>
+                      <li><a href="#">Features</a></li>
+                      <li><a href="#" class="btn-request">Request A Demo</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="central-body">
+                <!--<img class="image-404" src="error/img/404.svg" width="300px">-->
+                <br>
+                <h1 style="color: white">Website sedang dalam pengembangan</h1>
+                <a href="javascript:window.history.back()" class="btn-go-home">KEMBALI</a>
+                <!-- <a href="javascript:window.open('','_self').close();" class="btn-go-home">KELUAR</a> -->
+            </div>
+            <div class="objects">
+                <img class="object_rocket" src="error/img/rocket.svg" width="40px">
+                <div class="earth-moon">
+                    <img class="object_earth" src="error/img/earth.svg" width="100px">
+                    <img class="object_moon" src="error/img/moon.svg" width="80px">
+                </div>
+                <div class="box_astronaut">
+                    <img class="object_astronaut" src="error/img/astronaut.svg" width="140px">
+                </div>
+            </div>
+            <div class="glowing_stars">
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+
+            </div>
+
+        </div>
+        
+        <script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script type="text/javascript">
+       
+            $("#kembali").click(function(){
+              //window.open('','_parent',''); 
+              window.close();
+                //window.history.back();
+            });
+          
+        </script>
+    </body>
 </html>
