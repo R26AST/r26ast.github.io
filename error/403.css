@@ -90,7 +90,7 @@ h1 {
     margin: 15px auto;
     width: 100px;
     padding: 10px 15px;
-    border: 1px solid #fff;
+    border: 1px solid #000;
     border-radius: 100px;
     font-weight: 400;
     display: block;
@@ -108,7 +108,7 @@ h1 {
 }
 
 .btn-back:hover{
-    background-color: #fff;
+    background-color: #000;
     color: #fff;
     transform: scale(1.05);
     box-shadow: 0px 20px 20px rgba(0,0,0,0.1);
