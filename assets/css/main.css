@@ -1730,3 +1730,8 @@ mark {
   background: var(--accent-color);
   color: #fff;
 }
+
+textarea {
+  height: 156px;
+  resize: none;
+}
