@@ -36,14 +36,16 @@ $('.buy-proteus').on('submit', function(event) {
         $('.loading').removeClass('d-block');
         $('.error-message').html("Maaf! Terjadi masalah saat akan mengirim pesan.");
         $('#beli').prop('disabled', false);
-    });
+    }); */
 	
 	$.ajax({
         url: "https://docs.google.com/forms/u/0/d/e/1FAIpQLSeMiy4K2HjmijDUInoztUgru8HvYthrqKMc45isBCJw9rT3Rg/formResponse",
         data: {
           "entry.62458308": $('#nama').val(),
           "entry.94953025": $('#email').val(),
-          "entry.771906646": $('#formFile').val(),
+          //"entry.771906646": $('#formFile').val(),
+	  "entry.771906646": $('#formFile').prop('files')[0],
+	  //"entry.724604614": $(),
           "entry.1165680788": $('#token').val()
         },
         type: "POST",
@@ -52,9 +54,9 @@ $('.buy-proteus').on('submit', function(event) {
         },
         error: function () {
         }
-      });*/
+      });
 	 
-	const email = {
+	/*const email = {
 		SecureToken : "ad9fc324-a7c9-4513-b661-aeb97ae827a5",
 	 	From: $('#email').val(),
 	 	To: "putrakuruliff1980@gmail.com",
@@ -77,10 +79,10 @@ $('.buy-proteus').on('submit', function(event) {
         	To : 'putrakuruliff1980@gmail.com',
         	From : $('#nama').val(),
         	Subject : 'Pesan pembelian Proteus dari '+$('#nama').val(),
-        	Body : pesan*/ email
+        	Body : pesan* email
     	}).then(
       message => alert(message)
-    );
+    );*/
 });
 
 
