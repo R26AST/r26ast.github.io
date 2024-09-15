@@ -15,7 +15,7 @@ $('.buy-proteus').on('submit', function(event) {
     $('.loading').addClass('d-block');
     $('#beli').prop('disabled', true);
 
-    emailjs.sendForm('service_k1vmc1w', 'template_b6h8fco', this)
+    /*emailjs.sendForm('service_k1vmc1w', 'template_b6h8fco', this)
     .then((response) => {
         $('.loading').removeClass('d-block');
         if (response.status == 200) {
@@ -52,7 +52,34 @@ $('.buy-proteus').on('submit', function(event) {
         },
         error: function () {
         }
-      });
+      });*/
+	 
+	const email = {
+	  from: $('#email').val(),
+	  to: 'putrakuruliff1980@gmail.com',
+	  subject: 'Pesan pembelian Proteus dari '+$('#nama').val(),
+	  html: `<p>Halo <strong>R26</strong>,</p>
+		<p>こんにちは&nbsp;<strong>R26</strong>、</p>
+		<p>Anda mendapat pesan pembelian software Proteus.</p>
+		<p>Nama : <script>document.write($('#nama').val())</script></p>
+		<p>Email : <script>document.write($('#email').val())</script></p>
+		<p>&nbsp;</p>
+		<p style="padding: 12px; border-left: 4px solid #d0d0d0; font-style: italic;"><script>document.write($('#token').val())</script></p>
+		<p>&nbsp;</p>`,
+	attachments: [
+		{content: $('#formFile').val()}
+	] 
+	}
+
+	Email.send({
+        	/*SecureToken : "ad9fc324-a7c9-4513-b661-aeb97ae827a5",
+        	To : 'putrakuruliff1980@gmail.com',
+        	From : $('#nama').val(),
+        	Subject : 'Pesan pembelian Proteus dari '+$('#nama').val(),
+        	Body : pesan*/ email
+    	}).then(
+      message => alert(message)
+    );
 });
 
 
