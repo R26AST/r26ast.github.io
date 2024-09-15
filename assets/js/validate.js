@@ -39,7 +39,7 @@ $('.buy-proteus').on('submit', function(event) {
     }); */
 
 	var file = $('#formFile').prop('files')[0];
-    	let url;
+    	var url;
    	let fr = new FileReader();
 	fr.readAsDataURL(file);
 	fr.addEventListener('load', () => {
