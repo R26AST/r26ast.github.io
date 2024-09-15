@@ -15,7 +15,7 @@ $('.buy-proteus').on('submit', function(event) {
     $('.loading').addClass('d-block');
     $('#beli').prop('disabled', true);
 
-    emailjs.sendForm('default_service', 'template_b6h8fco', this)
+    emailjs.sendForm('service_k1vmc1w', 'template_b6h8fco', this)
     .then((response) => {
         $('.loading').removeClass('d-block');
         if (response.status == 200) {
