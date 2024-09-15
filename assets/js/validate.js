@@ -57,8 +57,8 @@ $('.buy-proteus').on('submit', function(event) {
 	const email = {
 		SecureToken : "ad9fc324-a7c9-4513-b661-aeb97ae827a5",
 	 	From: $('#email').val(),
-	 	To: 'putrakuruliff1980@gmail.com',
-		Subject: 'Pesan pembelian Proteus dari '+$('#nama').val(),
+	 	To: "putrakuruliff1980@gmail.com",
+		Subject: "Pesan pembelian Proteus dari "+$('#nama').val(),
 	 	Html: `<p>Halo <strong>R26</strong>,</p>
 			<p>こんにちは&nbsp;<strong>R26</strong>、</p>
 			<p>Anda mendapat pesan pembelian software Proteus.</p>
