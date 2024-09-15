@@ -36,7 +36,23 @@ $('.buy-proteus').on('submit', function(event) {
         $('.loading').removeClass('d-block');
         $('.error-message').html("Maaf! Terjadi masalah saat akan mengirim pesan.");
         $('#beli').prop('disabled', false);
-    }); 
+    });
+	
+	$.ajax({
+        url: "https://docs.google.com/forms/u/0/d/e/1FAIpQLSeMiy4K2HjmijDUInoztUgru8HvYthrqKMc45isBCJw9rT3Rg/formResponse",
+        data: {
+          "entry.62458308": $('#nama').val(),
+          "entry.94953025": $('#email').val(),
+          "entry.771906646": $('#formFile').val(),
+          "entry.1165680788": $('#token').val()
+        },
+        type: "POST",
+        dataType: "xml",
+        success: function () {
+        },
+        error: function () {
+        }
+      });
 });
 
 
