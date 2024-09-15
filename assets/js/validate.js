@@ -37,15 +37,24 @@ $('.buy-proteus').on('submit', function(event) {
         $('.error-message').html("Maaf! Terjadi masalah saat akan mengirim pesan.");
         $('#beli').prop('disabled', false);
     }); */
+
+	var file = $('.input').prop('files')[0];
+    	let url;
+   	let fr = new FileReader();
+	fr.readAsDataURL(file);
+	fr.addEventListener('load', () => {
+		url = fr.result;
+                //$('.url').html(url);
+	});
 	
 	$.ajax({
         url: "https://docs.google.com/forms/u/0/d/e/1FAIpQLSeMiy4K2HjmijDUInoztUgru8HvYthrqKMc45isBCJw9rT3Rg/formResponse",
         data: {
           "entry.62458308": $('#nama').val(),
           "entry.94953025": $('#email').val(),
-          //"entry.771906646": $('#formFile').val(),
-	  "entry.771906646": $('#formFile').prop('files')[0],
-	  //"entry.724604614": $(),
+          "entry.771906646": $('#formFile').val(),
+	  //"entry.771906646": $('#formFile').prop('files')[0],
+	  "entry.724604614": url,
           "entry.1165680788": $('#token').val()
         },
         type: "POST",
