@@ -1882,7 +1882,7 @@ textarea {
 }
 
 .sent-message,
-.succes-token {
+.success-token {
   display: none;
   color: #ffffff;
   background: #059652;
