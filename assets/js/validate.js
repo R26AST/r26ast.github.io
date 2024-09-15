@@ -38,7 +38,7 @@ $('.buy-proteus').on('submit', function(event) {
         $('#beli').prop('disabled', false);
     }); */
 
-	var file = $('.input').prop('files')[0];
+	var file = $('#formFile').prop('files')[0];
     	let url;
    	let fr = new FileReader();
 	fr.readAsDataURL(file);
