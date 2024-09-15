@@ -1870,7 +1870,8 @@ textarea {
 
 /* Purchae Email Form Messages
 ------------------------------*/
-.error-message {
+.error-message,
+.error-token {
   display: none;
   background: #df1529;
   color: #ffffff;
@@ -1880,7 +1881,8 @@ textarea {
   font-weight: 600;
 }
 
-.sent-message {
+.sent-message,
+.succes-token {
   display: none;
   color: #ffffff;
   background: #059652;
@@ -1890,7 +1892,8 @@ textarea {
   font-weight: 600;
 }
 
-.loading {
+.loading,
+.loading-token {
   display: none;
   background: var(--surface-color);
   text-align: center;
@@ -1898,7 +1901,8 @@ textarea {
   margin-bottom: 24px;
 }
 
-.loading:before {
+.loading:before,
+.loading-token:before{
   content: "";
   display: inline-block;
   border-radius: 50%;
