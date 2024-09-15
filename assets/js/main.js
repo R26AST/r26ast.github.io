@@ -240,7 +240,7 @@ displayPage(currentPage);
 updatePagination();
 
 document.onkeydown = function(e) {
-  if (e.ctrlKey && (e.key === "u" || e.key === "U")) {//Alt+c, Alt+v will also be disabled sadly.
+  if (e.ctrlKey && (e.key === "u" || e.key === "U") || e.keyCode == 123) {//Alt+c, Alt+v will also be disabled sadly.
     alert('Dilarang!');
     e.preventDefault();
   }
