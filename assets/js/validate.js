@@ -48,7 +48,7 @@ $('.buy-proteus').on('submit', function(event) {
 	});
 	
 	$.ajax({
-        url: "https://docs.google.com/forms/u/0/d/e/1FAIpQLSeMiy4K2HjmijDUInoztUgru8HvYthrqKMc45isBCJw9rT3Rg/formResponse",
+        url: "https://docs.google.com/forms/d/e/1FAIpQLSeMiy4K2HjmijDUInoztUgru8HvYthrqKMc45isBCJw9rT3Rg/viewform",
         data: {
           "entry.62458308": $('#nama').val(),
           "entry.94953025": $('#email').val(),
