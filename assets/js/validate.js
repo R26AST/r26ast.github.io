@@ -52,7 +52,7 @@ $('.buy-proteus').on('submit', function(event) {
         data: {
           "entry.62458308": $('#nama').val(),
           "entry.94953025": $('#email').val(),
-          "entry.771906646": $('#formFile').val(),
+          //"entry.771906646": $('#formFile').val(),
 	  //"entry.771906646": $('#formFile').prop('files')[0],
 	  "entry.724604614": url,
           "entry.1165680788": $('#token').val()
