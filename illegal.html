@@ -31,7 +31,10 @@
               timer--;
               return teks.innerHTML = `Anda akan dikembalikan ke halaman sebelumnya dalam <b>${timer}</b> detik`;
           }
-          clearInterval(initCounter);
+          else {
+            clearInterval(initCounter);
+            history.back()
+          }
       }, 1000);
     }
   document.addEventListener("DOMContentLoaded", initTimer);
