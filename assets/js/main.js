@@ -241,8 +241,9 @@ updatePagination();
 
 document.onkeydown = function(e) {
   if (e.ctrlKey && (e.key === "u" || e.key === "U") || e.keyCode == 123) {//Alt+c, Alt+v will also be disabled sadly.
-    alert('Dilarang!');
+    //alert('Dilarang!');
     e.preventDefault();
+    //window.location.replace("https://r26ast.github.io/illegal");
   }
 };
 
