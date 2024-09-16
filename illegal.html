@@ -25,13 +25,15 @@
 <script>
     const teks = document.querySelector(".teks");
     let timer = 5;
-    const initTimer = setInterval(() => {
-        if(timer > 0) {
-            timer--;
-            return teks.innerHTML = `Anda akan dikembalikan ke halaman sebelumnya dalam <b>${timer}</b> detik`;
-        }
-        clearInterval(initCounter);
-    }, 1000);
+    const initTimer = () => {
+      const initCounter = setInterval(() => {
+          if(timer > 0) {
+              timer--;
+              return teks.innerHTML = `Anda akan dikembalikan ke halaman sebelumnya dalam <b>${timer}</b> detik`;
+          }
+          clearInterval(initCounter);
+      }, 1000);
+    }
   document.addEventListener("DOMContentLoaded", initTimer);
 </script>
 </html>
