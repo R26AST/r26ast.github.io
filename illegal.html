@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="id" >
+<head>
+  <meta charset="UTF-8">
+  <title>403 Forbidden</title>
+  <base src="https://r26ast.github.io">
+  <link rel="stylesheet" href="/error/403.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="lock"></div>
+<div class="message">
+  <h1>Akses yang Anda lakukan dilarang!</h1>
+  <p>Mohon untuk tidak melakukan hal yang dilarang.</p>
+  <p class="teks"></p>
+</div>
+<center>
+  <a class="btn-back" href="javascript:history.back();">KEMBALI</a>
+</center>
+<!-- partial -->
+  
+</body>
+<script>
+    const teks = document.querySelector(".teks");
+    let timer = 5;
+    const initCounter = setInterval(() => {
+        if(timer > 0) {
+            timer--;
+            return teks.innerHTML = `Anda akan dikembalikan ke halaman sebelumnya dalam <b>${timer}</b> detik`;
+        }
+        clearInterval(initCounter);
+    }, 1000);
+  }
+  document.addEventListener("DOMContentLoaded", initTimer);
+</script>
+</html>
