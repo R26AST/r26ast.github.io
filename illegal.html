@@ -10,10 +10,11 @@
 <body>
 <!-- partial:index.partial.html -->
 <div class="lock"></div>
-<div class="message">
+<center>
   <h1>Akses yang Anda lakukan dilarang!</h1>
   <p>Mohon untuk tidak melakukan hal yang dilarang.</p>
-</div>
+</center>
+<br>
 <center>
   <span class="teks"></span>
   <a class="btn-back" href="javascript:history.back();">KEMBALI</a>
@@ -24,7 +25,7 @@
 <script>
     const teks = document.querySelector(".teks");
     let timer = 5;
-    const initCounter = setInterval(() => {
+    const initTimer = setInterval(() => {
         if(timer > 0) {
             timer--;
             return teks.innerHTML = `Anda akan dikembalikan ke halaman sebelumnya dalam <b>${timer}</b> detik`;
